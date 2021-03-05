@@ -22,6 +22,13 @@ socket.request = function request(type, data = {}) {
 
 let rc = null
 
+let username = "";
+do {
+  username = prompt("Username");
+} while( !username );
+
+joinRoom(username, "1")
+
 function joinRoom(name, room_id) {
   if (rc && rc.isOpen()) {
     console.log('already connected to a room')
